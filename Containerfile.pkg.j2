@@ -1,0 +1,62 @@
+ARG BASE_VERSION=15.1
+FROM ghcr.io/daemonless/nginx-base:${BASE_VERSION}
+
+ARG PHP_VERSION=85
+ARG FREEBSD_ARCH=amd64
+ARG PKG_NAME="php${PHP_VERSION}"
+ARG PACKAGES="${PKG_NAME} ${PKG_NAME}-composer"
+# Every PHP extension in ports except three: imagick (ImageMagick pulls in
+# llvm, gcc and python, 4 GB), smbclient (end-of-life samba416) and enchant
+# (python and perl). Package names, so pecl ones keep their pecl- prefix.
+# Ones that do not exist for a PHP version are skipped at build time:
+# opcache is only a package up to 8.4, and new versions lag on pecl ports.
+ARG PHP_EXTENSIONS_EXTRA=""
+ARG PHP_EXTENSIONS="bcmath brotli bz2 calendar ctype curl dba dom exif ffi fileinfo filter ftp gd gettext gmp grpc iconv intl ldap maxminddb mbstring mysqli odbc opcache pcntl pcov pdo pdo_dblib pdo_mysql pdo_odbc pdo_pgsql pdo_sqlite pecl-APCu pecl-amqp pecl-ast pecl-couchbase pecl-ds pecl-event pecl-excimer pecl-gnupg pecl-igbinary pecl-imap pecl-lzf pecl-mailparse pecl-memcache pecl-memcached pecl-mongodb pecl-msgpack pecl-opentelemetry pecl-protobuf pecl-psr pecl-rdkafka pecl-redis pecl-ssh2 pecl-uploadprogress pecl-uuid pecl-xdebug pecl-xlswriter pecl-yaml pecl-zstd pgsql phar posix session shmop simplexml snmp soap sockets sodium sqlite3 swoole sysvmsg sysvsem sysvshm tidy tokenizer xml xmlreader xmlwriter xsl zip zlib"
+
+LABEL org.opencontainers.image.title="Nginx + PHP-FPM" \
+      org.opencontainers.image.description="Nginx with PHP-FPM, composer and the PHP extensions from ports, for running your own PHP sites." \
+      org.opencontainers.image.source="https://github.com/daemonless/nginx-php-fpm" \
+      org.opencontainers.image.url="https://www.php.net/" \
+      org.opencontainers.image.documentation="https://www.php.net/manual/" \
+      org.opencontainers.image.licenses="PHP-3.01" \
+      org.opencontainers.image.vendor="daemonless" \
+      org.opencontainers.image.authors="daemonless" \
+      io.daemonless.category="Infrastructure" \
+      io.daemonless.port="80" \
+      io.daemonless.arch="${FREEBSD_ARCH}" \
+      io.daemonless.pkg-source="pkg" \
+      io.daemonless.base="nginx" \
+      io.daemonless.packages="${PACKAGES}" \
+      io.daemonless.pkg-name="${PKG_NAME}"
+
+# The extension packages install their ini files enabled; they are parked in
+# php-available so cont-init can enable just the set in PHP_EXTENSIONS.
+RUN pkg update && \
+    EXT=""; SKIP=""; for e in ${PHP_EXTENSIONS} ${PHP_EXTENSIONS_EXTRA}; do \
+        if pkg rquery '%n' "${PKG_NAME}-${e}" >/dev/null 2>&1; then EXT="${EXT} ${PKG_NAME}-${e}"; else SKIP="${SKIP} ${e}"; fi; \
+    done; \
+    echo "no package for ${PKG_NAME}:${SKIP}" && \
+    pkg install -y ${PACKAGES} ${EXT} && \
+    mkdir -p /app && \
+    pkg query '%v' ${PKG_NAME} > /app/version && \
+    mkdir -p /usr/local/etc/php-available /usr/local/etc/php-fpm.d && \
+    mv /usr/local/etc/php/ext-*.ini /usr/local/etc/php-available/ && \
+    rm -f /usr/local/etc/php/*.sample && \
+    cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini && \
+    sed -i '' -e 's|^;*error_log = .*|error_log = /dev/stderr|' /usr/local/etc/php-fpm.conf && \
+    pkg clean -ay && \
+    rm -rf /var/cache/pkg/* /var/db/pkg/repos/* && \
+    find /usr/local -name '*.a' -delete && \
+    rm -rf /usr/local/share/doc /usr/local/share/man /usr/local/include
+
+# Copy root filesystem
+COPY root/ /
+
+# Set permissions
+RUN chmod +x /etc/cont-init.d/* /etc/services.d/php-fpm/run /healthz
+
+# Expose
+EXPOSE 80
+
+# Volumes
+VOLUME /config

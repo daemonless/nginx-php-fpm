@@ -1,0 +1,91 @@
+name: nginx-php-fpm
+
+x-daemonless:
+  title: "Nginx + PHP-FPM"
+  icon: ":simple-php:"
+  category: "Infrastructure"
+  description: "Nginx with PHP-FPM, composer and the PHP extensions from ports, for running your own PHP sites."
+  upstream_url: "https://github.com/php/php-src"
+  web_url: "https://www.php.net/"
+  freshports_url: "https://www.freshports.org/lang/php85/"
+  user: "bsd"
+  mlock: false
+  community: "Discord:https://discord.gg/Kb9tkhecZT"
+
+  docs:
+    env:
+      PUID: "User ID for php-fpm workers and nginx workers"
+      PGID: "Group ID for php-fpm workers and nginx workers"
+      TZ: "Timezone, also used as PHP's date.timezone"
+      PHP_EXTENSIONS: "Space-separated list of PHP extensions to enable; replaces the default set"
+      PHP_EXTENSIONS_EXTRA: "Extensions to enable in addition to PHP_EXTENSIONS"
+    volumes:
+      /config: "Web root (/config/www), nginx and PHP configuration"
+    ports:
+      80: "Web"
+
+  notes: |
+    ## Your site
+
+    Put your PHP code in `/config/www`. On first start, when that directory is
+    empty, a welcome page is placed there showing the PHP version and the loaded
+    extensions. `/config/nginx/site-confs/default.conf` serves it; add more files
+    there for more sites. `/config/nginx/nginx.conf` and `/config/php/www.conf`
+    hold the nginx main config and the php-fpm pool. All of these are copied in
+    on first run and never overwritten afterwards.
+
+    ## PHP settings
+
+    `/config/php/php-local.ini` is loaded after `php.ini` and holds the memory,
+    upload and opcache settings. Edit it and restart the container.
+
+    ## Extensions
+
+    The image ships every PHP extension in the FreeBSD ports tree except imagick,
+    smbclient and enchant, whose dependencies would quadruple the image. By default
+    these are enabled:
+
+    `apcu bcmath bz2 ctype curl dom exif fileinfo filter gd iconv intl mbstring
+    mysqli opcache pdo pdo_mysql pdo_pgsql pdo_sqlite pgsql phar posix session
+    simplexml tokenizer xml xmlreader xmlwriter zip zlib`
+
+    Set `PHP_EXTENSIONS` to replace that list, or `PHP_EXTENSIONS_EXTRA` to add to
+    it, for example `PHP_EXTENSIONS_EXTRA=redis soap ldap`. Extensions not in the
+    image are reported in the container log at start. json and openssl are built
+    into PHP and always available.
+
+    ## Composer
+
+    Composer is installed. Run it as the `bsd` user so the files it writes stay
+    owned by your PUID:
+
+    ```
+    podman exec -u bsd nginx-php-fpm composer install -d /config/www
+    ```
+
+    ## PHP versions
+
+    Tags `86`, `85` and `84` pick the PHP version; `latest` is PHP 8.5. Each
+    has a `-pkg-latest` variant built from the FreeBSD latest package branch.
+    Newer PHP versions ship fewer extensions until the pecl ports catch up; the
+    welcome page lists what is loaded.
+
+services:
+  nginx-php-fpm:
+    image: ghcr.io/daemonless/nginx-php-fpm:latest
+    container_name: nginx-php-fpm
+    # "always", not "unless-stopped": FreeBSD's podman rc.d only auto-starts
+    # containers with restart-policy=always at boot (needs podman_enable=YES).
+    restart: always
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      # - PHP_EXTENSIONS_EXTRA=redis soap
+
+    volumes:
+      - /path/to/containers/nginx-php-fpm:/config
+
+    ports:
+      - 80:80

@@ -1,0 +1,57 @@
+# dbuild configuration file
+# Place in .daemonless/config.yaml or .dbuild.yaml (higher priority)
+#
+# Full reference: https://github.com/daemonless/dbuild
+
+icon: ':simple-php:'
+
+build:
+  variants:
+    - tag: 85-pkg
+      containerfile: Containerfile.pkg
+      pkg_name: php85
+      default: true
+      args:
+        BASE_VERSION: "15.1"
+        PHP_VERSION: "85"
+      aliases: ["85", "pkg", "latest"]
+    - tag: 85-pkg-latest
+      containerfile: Containerfile.pkg
+      pkg_name: php85
+      args:
+        BASE_VERSION: "15.1-latest"
+        PHP_VERSION: "85"
+      aliases: ["pkg-latest"]
+    - tag: 86-pkg
+      containerfile: Containerfile.pkg
+      pkg_name: php86
+      args:
+        BASE_VERSION: "15.1"
+        PHP_VERSION: "86"
+      aliases: ["86"]
+    - tag: 86-pkg-latest
+      containerfile: Containerfile.pkg
+      pkg_name: php86
+      args:
+        BASE_VERSION: "15.1-latest"
+        PHP_VERSION: "86"
+    - tag: 84-pkg
+      containerfile: Containerfile.pkg
+      pkg_name: php84
+      args:
+        BASE_VERSION: "15.1"
+        PHP_VERSION: "84"
+      aliases: ["84"]
+    - tag: 84-pkg-latest
+      containerfile: Containerfile.pkg
+      pkg_name: php84
+      args:
+        BASE_VERSION: "15.1-latest"
+        PHP_VERSION: "84"
+
+cit:
+  mode: screenshot
+  port: 80
+  health: /daemonless-ping
+  # php-fpm's startup notice; none of dbuild's default patterns match it.
+  ready: "ready to handle connections"

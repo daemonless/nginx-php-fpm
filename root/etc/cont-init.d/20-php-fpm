@@ -1,0 +1,52 @@
+#!/bin/sh
+# Lay out /config on first run, enable the requested PHP extensions and point
+# nginx and php-fpm at the files under /config.
+
+DEFAULT_EXTENSIONS="apcu bcmath bz2 ctype curl dom exif fileinfo filter gd iconv intl mbstring mysqli opcache pdo pdo_mysql pdo_pgsql pdo_sqlite pgsql phar posix session simplexml tokenizer xml xmlreader xmlwriter zip zlib"
+PHP_EXTENSIONS="${PHP_EXTENSIONS:-$DEFAULT_EXTENSIONS}"
+AVAIL=/usr/local/etc/php-available
+LIVE=/usr/local/etc/php
+
+mkdir -p /config/www /config/nginx/site-confs /config/php /var/run/php-fpm
+
+# User-editable defaults: copied once, never overwritten.
+[ -f /config/nginx/nginx.conf ] || cp /defaults/nginx/nginx.conf /config/nginx/nginx.conf
+[ -f /config/nginx/site-confs/default.conf ] || cp /defaults/nginx/default.conf /config/nginx/site-confs/default.conf
+[ -f /config/php/www.conf ] || cp /defaults/php/www.conf /config/php/www.conf
+[ -f /config/php/php-local.ini ] || cp /defaults/php/php-local.ini /config/php/php-local.ini
+if [ -z "$(ls -A /config/www 2>/dev/null)" ]; then
+    cp /defaults/www/index.php /config/www/index.php
+    echo "[php-fpm] /config/www was empty, placed the welcome page there"
+fi
+
+ln -sf /config/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf
+ln -sf /config/php/www.conf /usr/local/etc/php-fpm.d/www.conf
+ln -sf /config/php/php-local.ini "$LIVE/zz-local.ini"
+printf 'date.timezone = %s\n' "${TZ:-UTC}" > "$LIVE/zz-timezone.ini"
+
+# Extensions: enable exactly the requested set. pdo_* drivers need pdo and
+# the XML extensions need dom, so those come along automatically.
+want=" $PHP_EXTENSIONS $PHP_EXTENSIONS_EXTRA "
+case "$want" in *" pdo_"*) want="$want pdo " ;; esac
+case "$want" in *" xmlreader "*|*" xmlwriter "*|*" xsl "*|*" soap "*|*" simplexml "*) want="$want dom xml " ;; esac
+
+rm -f "$LIVE"/ext-*.ini
+enabled=""
+for f in "$AVAIL"/ext-*.ini; do
+    [ -e "$f" ] || continue
+    name=$(basename "$f" .ini)
+    name=${name#ext-??-}
+    case "$want" in
+        *" $name "*) ln -sf "$f" "$LIVE/$(basename "$f")"; enabled="$enabled $name" ;;
+    esac
+done
+
+# Anything asked for that is neither an enabled extension nor built into PHP.
+loaded=$(php -m 2>/dev/null | tr 'A-Z' 'a-z' | sed 's/^zend //')
+for name in $want; do
+    echo "$loaded" | grep -qix "$name" && continue
+    echo "[php-fpm] WARNING: no extension named '$name' in this image"
+done
+echo "[php-fpm] PHP $(php -r 'echo PHP_VERSION;') with extensions:$enabled"
+
+chown -R bsd:bsd /config /var/run/php-fpm
