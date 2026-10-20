@@ -44,8 +44,8 @@ services:
       - PUID=1000  # User ID for php-fpm workers and nginx workers
       - PGID=1000  # Group ID for php-fpm workers and nginx workers
       - TZ=UTC  # Timezone, also used as PHP's date.timezone
-      - PHP_EXTENSIONS=  # Space-separated list of PHP extensions to enable; replaces the default set
-      - PHP_EXTENSIONS_EXTRA=  # Extensions to enable in addition to PHP_EXTENSIONS
+      # - PHP_EXTENSIONS=  # Space-separated list of PHP extensions to enable; replaces the default set
+      # - PHP_EXTENSIONS_EXTRA=  # Extensions to enable in addition to PHP_EXTENSIONS
     volumes:
       - "/containers/nginx-php-fpm:/config"
     ports:
@@ -66,8 +66,6 @@ DIRECTOR_PROJECT=nginx-php-fpm
 PUID=1000
 PGID=1000
 TZ=UTC
-PHP_EXTENSIONS=
-PHP_EXTENSIONS_EXTRA=
 ```
 
 **appjail-director.yml**:
@@ -90,8 +88,6 @@ services:
         - PUID: !ENV '${PUID}'
         - PGID: !ENV '${PGID}'
         - TZ: !ENV '${TZ}'
-        - PHP_EXTENSIONS: !ENV '${PHP_EXTENSIONS}'
-        - PHP_EXTENSIONS_EXTRA: !ENV '${PHP_EXTENSIONS_EXTRA}'
     volumes:
       - nginx-php-fpm: /config
 volumes:
@@ -135,8 +131,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=UTC
-      - PHP_EXTENSIONS=
-      - PHP_EXTENSIONS_EXTRA=
     volumes:
       - "/containers/nginx-php-fpm:/config"
 ```
