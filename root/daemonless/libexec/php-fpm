@@ -4,6 +4,4 @@
 mkdir -p /var/run/php-fpm
 chown bsd:bsd /var/run/php-fpm
 
-s6-ready-when test -S /var/run/php-fpm/php-fpm.sock
-
 exec /usr/local/sbin/php-fpm -F

@@ -51,9 +51,10 @@ RUN pkg update && \
 
 # Copy root filesystem
 COPY root/ /
+RUN chmod +x /daemonless/libexec/* /daemonless/init.d/*
 
 # Set permissions
-RUN chmod +x /etc/cont-init.d/* /etc/services.d/php-fpm/run /healthz
+RUN chmod +x /healthz
 
 # Expose
 EXPOSE 80
