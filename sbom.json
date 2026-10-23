@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-22T07:50:39Z",
+  "generated": "2026-10-23T16:59:32Z",
   "image": "nginx-php-fpm",
   "tags": {
     "84-pkg": {
       "app_version": "8.4.26",
       "arch": "amd64",
-      "generated": "2026-10-22T07:49:11Z",
+      "generated": "2026-10-23T16:56:59Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -181,13 +181,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -281,13 +274,6 @@
             ],
             "name": "cyrus-sasl",
             "version": "2.1.28_6"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -602,7 +588,7 @@
               "BSD3CLAUSE"
             ],
             "name": "libzip",
-            "version": "1.11.4"
+            "version": "1.12.1"
           },
           {
             "licenses": [
@@ -631,7 +617,7 @@
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.5_2,3"
+            "version": "1.30.6,3"
           },
           {
             "licenses": [
@@ -1343,20 +1329,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "PD"
             ],
             "name": "sqlite3",
@@ -1411,7 +1383,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 196,
+        "freebsd": 192,
         "go": 0,
         "java": 0,
         "node": 0,
@@ -1419,13 +1391,13 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 196
+        "total": 192
       }
     },
     "84-pkg-latest": {
       "app_version": "8.4.27",
       "arch": "amd64",
-      "generated": "2026-10-22T07:50:04Z",
+      "generated": "2026-10-23T16:51:01Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1601,13 +1573,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -1701,13 +1666,6 @@
             ],
             "name": "cyrus-sasl",
             "version": "2.1.28_6"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -2051,7 +2009,7 @@
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.6_1,3"
+            "version": "1.30.6_3,3"
           },
           {
             "licenses": [
@@ -2763,20 +2721,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "PD"
             ],
             "name": "sqlite3",
@@ -2831,7 +2775,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 196,
+        "freebsd": 192,
         "go": 0,
         "java": 0,
         "node": 0,
@@ -2839,13 +2783,13 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 196
+        "total": 192
       }
     },
     "85-pkg": {
       "app_version": "8.5.11",
       "arch": "amd64",
-      "generated": "2026-10-22T07:46:22Z",
+      "generated": "2026-10-23T16:56:34Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -3021,13 +2965,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -3121,13 +3058,6 @@
             ],
             "name": "cyrus-sasl",
             "version": "2.1.28_6"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -3442,7 +3372,7 @@
               "BSD3CLAUSE"
             ],
             "name": "libzip",
-            "version": "1.11.4"
+            "version": "1.12.1"
           },
           {
             "licenses": [
@@ -3471,7 +3401,7 @@
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.5_2,3"
+            "version": "1.30.6,3"
           },
           {
             "licenses": [
@@ -4176,20 +4106,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "PD"
             ],
             "name": "sqlite3",
@@ -4244,7 +4160,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 195,
+        "freebsd": 191,
         "go": 0,
         "java": 0,
         "node": 0,
@@ -4252,13 +4168,13 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 195
+        "total": 191
       }
     },
     "85-pkg-latest": {
       "app_version": "8.5.12",
       "arch": "amd64",
-      "generated": "2026-10-22T07:47:36Z",
+      "generated": "2026-10-23T16:55:23Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -4434,13 +4350,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -4534,13 +4443,6 @@
             ],
             "name": "cyrus-sasl",
             "version": "2.1.28_6"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -4884,7 +4786,7 @@
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.6_1,3"
+            "version": "1.30.6_3,3"
           },
           {
             "licenses": [
@@ -5589,20 +5491,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "PD"
             ],
             "name": "sqlite3",
@@ -5657,7 +5545,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 195,
+        "freebsd": 191,
         "go": 0,
         "java": 0,
         "node": 0,
@@ -5665,13 +5553,13 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 195
+        "total": 191
       }
     },
     "86-pkg": {
       "app_version": "8.6.0.r3",
       "arch": "amd64",
-      "generated": "2026-10-22T07:45:42Z",
+      "generated": "2026-10-23T16:50:19Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -5847,13 +5735,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -5947,13 +5828,6 @@
             ],
             "name": "cyrus-sasl",
             "version": "2.1.28_6"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -6200,7 +6074,7 @@
               "BSD3CLAUSE"
             ],
             "name": "libzip",
-            "version": "1.11.4"
+            "version": "1.12.1"
           },
           {
             "licenses": [
@@ -6221,7 +6095,7 @@
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.5_2,3"
+            "version": "1.30.6,3"
           },
           {
             "licenses": [
@@ -6737,20 +6611,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "PD"
             ],
             "name": "sqlite3",
@@ -6805,7 +6665,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 158,
+        "freebsd": 154,
         "go": 0,
         "java": 0,
         "node": 0,
@@ -6813,13 +6673,13 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 158
+        "total": 154
       }
     },
     "86-pkg-latest": {
       "app_version": "8.6.0.r3",
       "arch": "amd64",
-      "generated": "2026-10-22T07:49:19Z",
+      "generated": "2026-10-23T16:54:46Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -6995,13 +6855,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -7095,13 +6948,6 @@
             ],
             "name": "cyrus-sasl",
             "version": "2.1.28_6"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -7369,7 +7215,7 @@
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.6_1,3"
+            "version": "1.30.6_3,3"
           },
           {
             "licenses": [
@@ -7885,20 +7731,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "PD"
             ],
             "name": "sqlite3",
@@ -7953,7 +7785,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 158,
+        "freebsd": 154,
         "go": 0,
         "java": 0,
         "node": 0,
@@ -7961,7 +7793,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 158
+        "total": 154
       }
     }
   }
