@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-10T08:05:41Z",
+  "generated": "2026-11-17T23:40:03Z",
   "image": "nginx-php-fpm",
   "tags": {
     "84-pkg": {
@@ -6677,9 +6677,9 @@
       }
     },
     "86-pkg-latest": {
-      "app_version": "8.6.0.r5",
+      "app_version": "8.6.0.r6",
       "arch": "amd64",
-      "generated": "2026-11-10T08:04:32Z",
+      "generated": "2026-11-17T23:39:16Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -6968,7 +6968,7 @@
               "GPLv2"
             ],
             "name": "freetds",
-            "version": "1.5.20,1"
+            "version": "1.5.21,1"
           },
           {
             "licenses": [
@@ -7028,7 +7028,7 @@
               "ZLIB"
             ],
             "name": "jpeg-turbo",
-            "version": "3.1.4.1"
+            "version": "3.2.1"
           },
           {
             "licenses": [
@@ -7042,7 +7042,7 @@
               "APACHE20"
             ],
             "name": "lerc",
-            "version": "4.2.0"
+            "version": "4.3.0"
           },
           {
             "licenses": [
@@ -7108,14 +7108,14 @@
               "GPLv2"
             ],
             "name": "liblz4",
-            "version": "1.10.0_2,1"
+            "version": "1.11.1,1"
           },
           {
             "licenses": [
               "MIT"
             ],
             "name": "libnghttp2",
-            "version": "1.70.0"
+            "version": "1.71.0"
           },
           {
             "licenses": [
@@ -7215,7 +7215,7 @@
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.6_10,3"
+            "version": "1.30.6_13,3"
           },
           {
             "licenses": [
@@ -7251,14 +7251,14 @@
               "BSD3CLAUSE"
             ],
             "name": "php86",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-bcmath",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
@@ -7272,196 +7272,196 @@
               "BSD3CLAUSE"
             ],
             "name": "php86-bz2",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-calendar",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "MIT"
             ],
             "name": "php86-composer",
-            "version": "2.11.1"
+            "version": "2.11.2"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-ctype",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-curl",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-dba",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-dom",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-exif",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-ffi",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-fileinfo",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-filter",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-ftp",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-gd",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-gettext",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-gmp",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-iconv",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-intl",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-ldap",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-mbstring",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-mysqli",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-odbc",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-pcntl",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-pdo",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-pdo_dblib",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-pdo_mysql",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-pdo_odbc",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-pdo_pgsql",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-pdo_sqlite",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
@@ -7552,161 +7552,161 @@
               "BSD3CLAUSE"
             ],
             "name": "php86-pgsql",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-phar",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-posix",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-session",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-shmop",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-simplexml",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-snmp",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-soap",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-sockets",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-sodium",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-sqlite3",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-sysvmsg",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-sysvsem",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-sysvshm",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-tidy",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-tokenizer",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-xml",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-xmlreader",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-xmlwriter",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-xsl",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-zip",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "php86-zlib",
-            "version": "8.6.0.r5"
+            "version": "8.6.0.r6"
           },
           {
             "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.9.0"
+            "version": "2.9.2"
           },
           {
             "licenses": [
@@ -7720,7 +7720,7 @@
               "PostgreSQL"
             ],
             "name": "postgresql18-client",
-            "version": "18.6"
+            "version": "18.7"
           },
           {
             "licenses": [
